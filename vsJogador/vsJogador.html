@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advinhe Meu Número</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="titulo_principal">Advinhe Meu</h1>
+    <h1 class="titulo_principal">Número</h1>
+    <h2>por Otavio Carvalho</h2>
+
+    <section id="escolha_nome_Jogador1" class="invisivel">
+        <h3>Jogador 1</h3>
+        <p>Digite seu nome:</p>
+        <input type="text" name="" id="input_nome_Jogador1" class="nome_jogador">
+        <button onclick="salvar_nome_Jogador1()" id="confirmar_nome_Jogador1">Confirmar</button>
+    </section>
+
+    <section id="escolha_nome_Jogador2" class="invisivel">
+        <h3>Jogador 2</h3>
+        <p>Digite seu nome:</p>
+        <input type="text" name="" id="input_nome_Jogador2" class="nome_jogador">
+        <button onclick="salvar_nome_Jogador2()" id="confirmar_nome_Jogador2">Confirmar</button>
+    </section>
+
+    <section id="escolha_num_secreto_Jogador1" class="invisivel">
+        <h3>Jogador 1</h3>
+        <p id="msg">Escolha seu número secreto de 1 a 500:</p>
+
+        <input type="number" name="" id="input_num_Jogador1" class="input_num_secreto">
+
+        <button onclick="escolha_num_Jogador1()" id="confirmar_num_Jogador1">Confirmar</button>
+    </section>
+
+    <section id="advinhacao_Jogador2" class="invisivel">
+        <h3>Jogador 2</h3>
+        <p id="msg">Tente advinhar o número secreto:</p>
+        <input type="number" name="" id="input_tentativa_Jogador2">
+        <button onclick="tentativa_Jogador2()" id="confirmar_tent_Jogador2">Confirmar</button>
+    </section>
+
+    <section id="msg_Jgd2_advinhou" class="invisivel">
+        <p>(NÚMERO SECRETO)</p>
+        <h4>PARABÉNS, Jogador 2!</h4>
+        <p>Você advinhou o número secreto!</p>
+        <p>Número de tentativas:</p>
+        <button onclick="Proximo_Jogador()" id="proximo_jogador">Próximo</button>
+    </section>
+
+    <section id="escolha_num_secreto_Jogador2" class="invisivel">
+        <h3>Jogador 2</h3>
+        <p id="msg">Escolha seu número secreto de 1 a 500:</p>
+        <input type="number" name="" id="input_num_Jogador2" class="input_num_secreto">
+        <button onclick="escolha_num_Jogador2()" id="confirmar_num_Jogador2">Confirmar</button>
+    </section>
+
+    <section id="advinhacao_Jogador1" class="invisivel">
+        <h3>Jogador 1</h3>
+        <p id="msg">Tente advinhar o número secreto:</p>
+
+        <input type="number" name="" id="input_tentativa_Jogador1">
+
+        <button onclick="tentativa_Jogador1()" id="confirmar_tent_Jogador1">Confirmar</button>
+    </section>
+
+    <section id="msg_Jgd1_advinhou" class="invisivel">
+        <p>(NÚMERO SECRETO)</p>
+        <h4>PARABÉNS, Jogador 1!</h4>
+        <p>Você advinhou o número secreto!</p>
+        <p>Número de tentativas:</p>
+        <button onclick="Mostrar_Placar()" id="mostrar_placar">Próximo</button>
+    </section>
+
+    <section id="fim_de_jogo" class="invisivel">
+        <p>PLACAR SERÁ AQUI</p>
+        <a href="/menuprincipal/menuprincipal.html">
+            <button>Voltar ao menu principal</button>
+        </a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
