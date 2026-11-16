@@ -6,6 +6,7 @@ let tent_Jgd2 = 0
 let fase = 1
 
 function salvar_nome_Jogador1() {
+    document.getElementById("")
     nome_Jogador1 = document.getElementById("input_nome_Jogador1").value
     fase ++
     document.getElementById("escolha_nome_Jogador1").classList.add("invisivel")
