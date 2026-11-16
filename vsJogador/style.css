@@ -20,10 +20,15 @@ body {
     background-color: #1e96ff;
 }
 
+.invisivel {
+    display: none;
+}
+
 h1, h2, h3, h4, p {
     margin: 0;
     padding: 0;
 
+    font-family: "Basic", sans-serif;
     line-height: 100%;
 }
 
@@ -33,7 +38,7 @@ h1, h2, h3, h4, p {
     align-items: center;
 
     height: 100%;
-    width: 800px;
+    width: 520px;
 
     margin-top: 120px;
 
@@ -46,9 +51,13 @@ h1, h2, h3, h4, p {
 
     width: 100%;
 
-    margin-bottom: 120px;
+    margin-bottom: 160px;
 
     background-color: #1e96ff;
+}
+
+#interface {
+    width: 100%;
 }
 
 .titulo_principal {
@@ -56,7 +65,7 @@ h1, h2, h3, h4, p {
     left: 88px;
 
     font-family: "Erica One", serif;
-    font-size: 8rem;
+    font-size: 7.85rem;
     align-self: self-start;
     line-height: 100%;
     letter-spacing: 8px;
@@ -67,14 +76,16 @@ h1, h2, h3, h4, p {
 
 #titulo_advinhe_meu {
     position: relative;
-    left: 132px;
+    left: 0px;
+
+    max-width: 520px;
 }
 
 #titulo_advinhe_meu span {
     position: relative;
     top: 12px;
-    right: 24px;
-    font-size: 3.2rem;
+    right: 20px;
+    font-size: 3.25rem;
     line-height: 100%;
     letter-spacing: 5px;
 
@@ -83,20 +94,107 @@ h1, h2, h3, h4, p {
 
 #titulo_numero {
     position: relative;
-    left: 258px;
+    left: 132px;
 
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .por_OtavioCarvalho {
     position: relative;
-    right: 168px;
+    right: 20px;
     font-family: Arial, sans-serif;
     font-size: 2rem;
     align-self: self-end;
     color: #74beff;
 }
 
-.invisivel {
-    display: none;
+.h3_Nome_Jogador {
+    justify-self: center;
+
+    margin-bottom: 64px;
+
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    color: #202020;
+}
+
+.mensagem_principal {
+    justify-self: center;
+
+    margin-bottom: 40px;
+
+    font-family: "Basic", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #0046c9;
+}
+
+.input_nome_jogador {
+    display: flex;
+    justify-self: center;
+
+    height: 40px;
+    width: 100%;
+
+    margin-bottom: 40px;
+    padding-left: 10px;
+
+    border: solid 4px #0046c9;
+    border-radius: 20px;
+
+    font-family: "Basic", sans-serif;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    caret-color: #0046c9;
+    color: #202020;
+    background-color: #74beff;
+}
+
+.input_nome_jogador:focus {
+    outline: 5px solid #0088ff;
+}
+
+.input_nome_jogador::placeholder {
+    color: #0088ff;
+}
+
+.input_nome_jogador:hover {
+    outline: 5px solid #0088ff;
+}
+
+.botao_confirmar {
+    display: block;
+    justify-self: center;
+
+    height: 44px;
+    width: 132px;
+
+    outline: none;
+    border: none;
+    border-radius: 20px;
+
+    font-family: "Basic", sans-serif;
+    font-size: 2rem;
+    line-height: 100%;
+
+    cursor: pointer;
+    color: #74beff;
+    background-color: #0046c9;
+}
+
+.botao_confirmar:hover {
+    outline: 5px solid #0088ff;
+    color: #82c5ff;
+}
+
+.botao_confirmar:focus {
+    outline: 5px solid #0088ff;
+    color: #82c5ff;
 }
