@@ -3,9 +3,98 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
     margin: 0;
     padding: 0;
+
     font-size: 1.6rem;
+    line-height: 100%;
+
+    background-color: #1e96ff;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+
+    line-height: 100%;
+}
+
+#container_principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+    width: 800px;
+
+    margin-top: 120px;
+
+    background-color: #1e96ff;
+}
+
+#titulo_principal {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-bottom: 120px;
+
+    background-color: #1e96ff;
+}
+
+.titulo_principal {
+    position: relative;
+    left: 88px;
+
+    font-family: "Erica One", serif;
+    font-size: 8rem;
+    align-self: self-start;
+    line-height: 100%;
+    letter-spacing: 8px;
+
+    color: #74beff;
+    -webkit-text-stroke: 7px #0046c9;
+}
+
+#titulo_advinhe_meu {
+    position: relative;
+    left: 132px;
+}
+
+#titulo_advinhe_meu span {
+    position: relative;
+    top: 12px;
+    right: 24px;
+    font-size: 3.2rem;
+    line-height: 100%;
+    letter-spacing: 5px;
+
+    -webkit-text-stroke: 4px #0046c9;
+}
+
+#titulo_numero {
+    position: relative;
+    left: 258px;
+
+    margin-bottom: 8px;
+}
+
+.por_OtavioCarvalho {
+    position: relative;
+    right: 168px;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    align-self: self-end;
+    color: #74beff;
 }
 
 .invisivel {
