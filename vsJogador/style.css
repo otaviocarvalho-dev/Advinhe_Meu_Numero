@@ -17,6 +17,7 @@ body {
     font-size: 1.6rem;
     line-height: 100%;
 
+    cursor: default !important;
     background-color: #1e96ff;
 }
 
@@ -51,7 +52,7 @@ h1, h2, h3, h4, p {
 
     width: 100%;
 
-    margin-bottom: 160px;
+    margin-bottom: 100px;
 
     background-color: #1e96ff;
 }
@@ -65,46 +66,47 @@ h1, h2, h3, h4, p {
     left: 88px;
 
     font-family: "Erica One", serif;
-    font-size: 7.85rem;
+    font-size: 6.4rem;
     align-self: self-start;
     line-height: 100%;
-    letter-spacing: 8px;
+    letter-spacing: 6px;
 
     color: #74beff;
-    -webkit-text-stroke: 7px #0046c9;
+    -webkit-text-stroke: 5px #0046c9;
 }
 
 #titulo_advinhe_meu {
     position: relative;
-    left: 0px;
+    left: 48px;
 
     max-width: 520px;
 }
 
 #titulo_advinhe_meu span {
-    position: relative;
-    top: 12px;
-    right: 20px;
     font-size: 3.25rem;
     line-height: 100%;
     letter-spacing: 5px;
 
+    position: relative;
+    top: 6px;
+    right: 12px;
     -webkit-text-stroke: 4px #0046c9;
 }
 
 #titulo_numero {
-    position: relative;
-    left: 132px;
-
     margin-bottom: 12px;
+
+    position: relative;
+    left: 172px;
 }
 
 .por_OtavioCarvalho {
-    position: relative;
-    right: 20px;
     font-family: Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 1.6rem;
     align-self: self-end;
+    
+    position: relative;
+    right: 49px;
     color: #74beff;
 }
 
@@ -124,7 +126,7 @@ h1, h2, h3, h4, p {
 .mensagem_principal {
     justify-self: center;
 
-    margin-bottom: 32px;
+    margin-bottom: 26px;
 
     font-family: "Basic", sans-serif;
     font-size: 2.8rem;
@@ -166,7 +168,8 @@ h1, h2, h3, h4, p {
     color: #0088ff;
 }
 
-.input_num_secreto {
+.input_num_secreto,
+.input_tentativa_Jogador {
     display: flex;
     justify-self: center;
 
@@ -190,16 +193,21 @@ h1, h2, h3, h4, p {
 }
 
 .input_num_secreto[type="number"]::-webkit-inner-spin-button,
-.input_num_secreto[type="number"]::-webkit-outer-spin-button {
+.input_num_secreto[type="number"]::-webkit-outer-spin-button,
+.input_tentativa_Jogador[type="number"]::-webkit-inner-spin-button,
+.input_tentativa_Jogador[type="number"]::-webkit-outer-spin-button {
     display: none;
 }
 
 .input_num_secreto:focus,
-.input_num_secreto:hover {
+.input_num_secreto:hover,
+.input_tentativa_Jogador:focus,
+.input_tentativa_Jogador:hover {
     outline: 5px solid #0088ff;
 }
 
-.input_num_secreto::placeholder {
+.input_num_secreto::placeholder,
+.input_tentativa_Jogador::placeholder {
     color: #0088ff;
 }
 
@@ -231,4 +239,59 @@ h1, h2, h3, h4, p {
 .botao_confirmar:focus {
     outline: 5px solid #0088ff;
     color: #82c5ff;
+}
+
+.h3_Parabens {
+    justify-self: center;
+
+    margin-bottom: 16px;
+
+    font-size: 4rem;
+    letter-spacing: 1px;
+
+    color: #82c5ff;
+    text-shadow: 3px 3px 5px #0046c9;
+}
+
+.container_num_secreto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+
+    height: 240px;
+    width: 240px;
+
+    margin-bottom: 28px;
+
+    border-radius: 50%;
+
+    background-color: #0046c9;
+}
+
+.num_secreto_destacado {
+    justify-self: center;
+
+    margin-bottom: 32px;
+
+    font-family: "Erica One", serif;
+    font-size: 8.4rem;
+    letter-spacing: 8px;
+
+    position: relative;
+    top: 14px;
+    left: 5px;
+    color: #74beff;
+}
+
+.msg_num_tentativas {
+    justify-self: center;
+
+    margin-bottom: 32px;
+
+    font-family: "Basic", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+
+    color: #0046c9;
 }
