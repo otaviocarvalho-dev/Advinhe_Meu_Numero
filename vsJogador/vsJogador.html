@@ -25,29 +25,29 @@
             <section id="escolha_nome_Jogador1" class="container_interface" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Digite seu nome:</p>
-                <input placeholder="Digite seu nome aqui" type="text" name="" id="input_nome_Jogador1" class="input_nome_jogador">
+                <input placeholder="Digite seu nome aqui" maxlength="35" type="text" name="" id="input_nome_Jogador1" class="input_nome_jogador">
                 <button onclick="salvar_nome_Jogador1()" id="confirmar_nome_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="escolha_nome_Jogador2" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 2</h3>
                 <p class="mensagem_principal">Digite seu nome:</p>
-                <input type="text" name="" id="input_nome_Jogador2" class="input_nome_jogador">
+                <input placeholder="Digite seu nome aqui" maxlength="35" type="text" name="" id="input_nome_Jogador2" class="input_nome_jogador">
                 <button onclick="salvar_nome_Jogador2()" id="confirmar_nome_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="escolha_num_secreto_Jogador1" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 1</h3>
-                <p class="mensagem_principal">Escolha seu número secreto de 1 a 500:</p>
-                <input type="number" name="" id="input_num_Jogador1" class="input_num_secreto">
-                <button onclick="escolha_num_Jogador1()" id="confirmar_num_Jogador1">Confirmar</button>
+                <p class="mensagem_principal">Escolha seu número secreto:</p>
+                <input placeholder="000" maxlength="3" type="number" name="" id="input_num_Jogador1" class="input_num_secreto">
+                <button onclick="escolha_num_Jogador1()" id="confirmar_num_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="advinhacao_Jogador2" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 2</h3>
                 <p class="mensagem_principal">Tente advinhar o número secreto:</p>
-                <input type="number" name="" id="input_tentativa_Jogador2">
-                <button onclick="tentativa_Jogador2()" id="confirmar_tent_Jogador2">Confirmar</button>
+                <input placeholder="000" maxlength="3" type="number" name="" id="input_tentativa_Jogador2" class="input_tentativa_Jogador">
+                <button onclick="tentativa_Jogador2()" id="confirmar_tent_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="msg_Jgd2_advinhou" class="invisivel">
@@ -60,16 +60,16 @@
 
             <section id="escolha_num_secreto_Jogador2" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 2</h3>
-                <p class="mensagem_principal">Escolha seu número secreto de 1 a 500:</p>
+                <p class="mensagem_principal">Escolha seu número secreto:</p>
                 <input type="number" name="" id="input_num_Jogador2" class="input_num_secreto">
-                <button onclick="escolha_num_Jogador2()" id="confirmar_num_Jogador2">Confirmar</button>
+                <button onclick="escolha_num_Jogador2()" id="confirmar_num_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="advinhacao_Jogador1" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Tente advinhar o número secreto:</p>
-                <input type="number" name="" id="input_tentativa_Jogador1">
-                <button onclick="tentativa_Jogador1()" id="confirmar_tent_Jogador1">Confirmar</button>
+                <input type="number" name="" id="input_tentativa_Jogador1" class="input_tentativa_Jogador">
+                <button onclick="tentativa_Jogador1()" id="confirmar_tent_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="msg_Jgd1_advinhou" class="invisivel">
