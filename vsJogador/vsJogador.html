@@ -22,7 +22,7 @@
         </div>
 
         <div id="interface">
-            <section id="escolha_nome_Jogador1" class="container_interface" class="invisivel">
+            <section id="escolha_nome_Jogador1" class="invisivel container_interface">
                 <h3 class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Digite seu nome:</p>
                 <input placeholder="Digite seu nome aqui" maxlength="35" type="text" name="" id="input_nome_Jogador1" class="input_nome_jogador">
@@ -37,31 +37,33 @@
             </section>
 
             <section id="escolha_num_secreto_Jogador1" class="invisivel">
-                <h3 class="h3_Nome_Jogador">Jogador 1</h3>
+                <h3 id="h3_Nome_Jogador1" class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Escolha seu número secreto:</p>
                 <input placeholder="000" maxlength="3" type="number" name="" id="input_num_Jogador1" class="input_num_secreto">
                 <button onclick="escolha_num_Jogador1()" id="confirmar_num_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="advinhacao_Jogador2" class="invisivel">
-                <h3 class="h3_Nome_Jogador">Jogador 2</h3>
+                <h3 id="h3_Nome_Jogador2" class="h3_Nome_Jogador">Jogador 2</h3>
                 <p class="mensagem_principal">Tente advinhar o número secreto:</p>
                 <input placeholder="000" maxlength="3" type="number" name="" id="input_tentativa_Jogador2" class="input_tentativa_Jogador">
                 <button onclick="tentativa_Jogador2()" id="confirmar_tent_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
-            <section id="msg_Jgd2_advinhou" class="invisivel">
-                <p class="num_secreto_destacado">(NÚMERO SECRETO)</p>
-                <h3 class="h3_Parabens">PARABÉNS, Jogador 2!</h4>
+            <section id="msg_Jgd2_advinhou" class="invisivel mensagem_jogador_advinhou">
+                <h3 id="h3_Parabens_Jogador2" class="h3_Parabens">PARABÉNS, Jogador 2!</h3>
                 <p class="mensagem_principal">Você advinhou o número secreto!</p>
-                <p class="msg_num_tentativas">Número de tentativas:</p>
-                <button onclick="Proximo_Jogador()" id="proximo_jogador">Próximo</button>
+                <div class="container_num_secreto">
+                    <p id="num_secreto_destacado_Jogador2" class="num_secreto_destacado">123</p>
+                </div>
+                <p id="msg_num_tentativas_Jogador2" class="msg_num_tentativas">Número de tentativas: <span>00</span></p>
+                <button onclick="Proximo_Jogador()" id="proximo_jogador" class="botao_confirmar">Próximo</button>
             </section>
 
             <section id="escolha_num_secreto_Jogador2" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 2</h3>
                 <p class="mensagem_principal">Escolha seu número secreto:</p>
-                <input type="number" name="" id="input_num_Jogador2" class="input_num_secreto">
+                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" id="input_num_Jogador2" class="input_num_secreto">
                 <button onclick="escolha_num_Jogador2()" id="confirmar_num_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
@@ -72,10 +74,10 @@
                 <button onclick="tentativa_Jogador1()" id="confirmar_tent_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
-            <section id="msg_Jgd1_advinhou" class="invisivel">
-                <p class="num_secreto_destacado">(NÚMERO SECRETO)</p>
-                <h3 class="h3_Parabens">PARABÉNS, Jogador 1!</h4>
+            <section id="msg_Jgd1_advinhou" class="invisivel mensagem_jogador_advinhou">
+                <h3 class="h3_Parabens">PARABÉNS, Jogador 1!</h3>
                 <p class="mensagem_principal">Você advinhou o número secreto!</p>
+                <p class="num_secreto_destacado">(NÚMERO SECRETO)</p>
                 <p class="msg_num_tentativas">Número de tentativas:</p>
                 <button onclick="Mostrar_Placar()" id="mostrar_placar">Próximo</button>
             </section>
