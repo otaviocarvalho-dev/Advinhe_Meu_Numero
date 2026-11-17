@@ -6,65 +6,62 @@ let tent_Jgd2 = 0
 let fase = 1
 
 function salvar_nome_Jogador1() {
-    document.getElementById("")
     nome_Jogador1 = document.getElementById("input_nome_Jogador1").value
-    fase ++
     document.getElementById("escolha_nome_Jogador1").classList.add("invisivel")
+    fase ++
     atualizar_tela()
 }
 
 function salvar_nome_Jogador2() {
     nome_Jogador2 = document.getElementById("input_nome_Jogador2").value
-    fase ++
     document.getElementById("escolha_nome_Jogador2").classList.add("invisivel")
+    fase ++
     atualizar_tela()
 }
 
 function escolha_num_Jogador1() {
     num_Jogador1 = document.getElementById("input_num_Jogador1").value
-    fase ++
     document.getElementById("escolha_num_secreto_Jogador1").classList.add("invisivel")
+    fase ++
     atualizar_tela()
 }
 
 function tentativa_Jogador2() {
     tent_Jgd2 = document.getElementById("input_tentativa_Jogador2").value
     if (tent_Jgd2 == num_Jogador1) {
+        document.getElementById("advinhacao_Jogador2").classList.add("invisivel")
         document.getElementById("msg_Jgd2_advinhou").classList.remove("invisivel")
         fase ++
-        document.getElementById("advinhacao_Jogador2").classList.add("invisivel")
         atualizar_tela()
     }
     else {
         document.getElementById("input_tentativa_Jogador2").value = ""
-        document.createElement("p")
     }
 }
 
 function Proximo_Jogador() {
-    fase ++
     document.getElementById("msg_Jgd2_advinhou").classList.add("invisivel")
+    fase ++
     atualizar_tela()
 }
 
 function escolha_num_Jogador2() {
     num_Jogador2 = document.getElementById("input_num_Jogador2").value
-    fase ++
     document.getElementById("escolha_num_secreto_Jogador2").classList.add("invisivel")
+    fase ++
     atualizar_tela()
 }
 
 function tentativa_Jogador1() {
     tent_Jgd1 = document.getElementById("input_tentativa_Jogador1").value
     if (tent_Jgd1 == num_Jogador2) {
+        document.getElementById("advinhacao_Jogador1").classList.add("invisivel")
         document.getElementById("msg_Jgd1_advinhou").classList.remove("invisivel")
         fase ++
-        document.getElementById("advinhacao_Jogador1").classList.add("invisivel")
         atualizar_tela()
     }
     else {
         document.getElementById("input_tentativa_Jogador1").value = ""
-        document.createElement("p")
     }
 }
 
@@ -84,9 +81,11 @@ function atualizar_tela() {
             break
         case 3:
             document.getElementById("escolha_num_secreto_Jogador1").classList.remove("invisivel")
+            document.getElementById("h3_Nome_Jogador1").textContent = nome_Jogador1
             break
         case 4:
             document.getElementById("advinhacao_Jogador2").classList.remove("invisivel")
+            document.getElementById("h3_Nome_Jogador2").textContent = nome_Jogador2
             break
         case 5:
             document.getElementById("msg_Jgd2_advinhou").classList.remove("invisivel")
