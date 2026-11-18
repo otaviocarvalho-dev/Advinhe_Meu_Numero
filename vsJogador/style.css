@@ -106,7 +106,7 @@ h1, h2, h3, h4, p {
     align-self: self-end;
     
     position: relative;
-    right: 49px;
+    right: 50px;
     color: #74beff;
 }
 
@@ -126,7 +126,7 @@ h1, h2, h3, h4, p {
 .mensagem_principal {
     justify-self: center;
 
-    margin-bottom: 26px;
+    margin-bottom: 32px;
 
     font-family: "Basic", sans-serif;
     font-size: 2.8rem;
@@ -244,7 +244,7 @@ h1, h2, h3, h4, p {
 .h3_Parabens {
     justify-self: center;
 
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 
     font-size: 4rem;
     letter-spacing: 1px;
@@ -262,7 +262,7 @@ h1, h2, h3, h4, p {
     height: 240px;
     width: 240px;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 
     border-radius: 50%;
 
@@ -294,4 +294,39 @@ h1, h2, h3, h4, p {
     font-weight: 700;
 
     color: #0046c9;
+}
+
+.msg_num_tentativas span {
+    -webkit-text-stroke: 2px #74beff;
+}
+
+#mostrar_placar {
+    width: 180px;
+}
+
+.container_placar {
+    display: flex;
+}
+
+#placar_nome_Jogador1,
+#placar_nome_Jogador2 {
+
+}
+
+#placar_nome_Jogador1,
+#placar_nome_Jogador2 {
+
+}
+
+#placar_x {
+    font-family: "Erica One", serif;
+    line-height: 100%;
+    letter-spacing: 6px;
+
+    color: #74beff;
+    -webkit-text-stroke: 5px #0046c9;
+}
+
+.container_placar a button {
+    display: block;
 }
