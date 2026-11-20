@@ -6,6 +6,7 @@ let tent_Jgd1 = 0
 let tent_Jgd2 = 0
 let num_tent_Jgd1 = 0
 let num_tent_Jgd2 = 0
+let num_partidas = 0
 let fase = 1
 
 function salvar_nome_Jogador1() {
@@ -25,6 +26,7 @@ function salvar_nome_Jogador2() {
 function escolha_num_Jogador1() {
     num_Jogador1 = document.getElementById("input_num_Jogador1").value
     document.getElementById("escolha_num_secreto_Jogador1").classList.add("invisivel")
+    document.getElementById("input_num_Jogador1").value = ""
     fase ++
     atualizar_tela()
 }
@@ -36,6 +38,7 @@ function tentativa_Jogador2() {
     if (tent_Jgd2 === Number(num_Jogador1)) {
         document.getElementById("advinhacao_Jogador2").classList.add("invisivel")
         document.getElementById("msg_Jgd2_advinhou").classList.remove("invisivel")
+        document.getElementById("input_tentativa_Jogador2").value = ""
         num_tent_Jgd2 ++
         fase ++
         atualizar_tela()
@@ -55,6 +58,7 @@ function Proximo_Jogador() {
 function escolha_num_Jogador2() {
     num_Jogador2 = document.getElementById("input_num_Jogador2").value
     document.getElementById("escolha_num_secreto_Jogador2").classList.add("invisivel")
+    document.getElementById("input_num_Jogador2").value = ""
     fase ++
     atualizar_tela()
 }
@@ -66,6 +70,7 @@ function tentativa_Jogador1() {
     if (tent_Jgd1 === Number(num_Jogador2)) {
         document.getElementById("advinhacao_Jogador1").classList.add("invisivel")
         document.getElementById("msg_Jgd1_advinhou").classList.remove("invisivel")
+        document.getElementById("input_tentativa_Jogador1").value = ""
         num_tent_Jgd1 ++
         fase ++
         atualizar_tela()
@@ -78,7 +83,13 @@ function tentativa_Jogador1() {
 
 function Mostrar_Placar() {
     document.getElementById("msg_Jgd1_advinhou").classList.add("invisivel")
+    num_partidas ++
     fase ++
+    atualizar_tela()
+}
+
+function Partida_Desempate() {
+    fase = 3
     atualizar_tela()
 }
 
@@ -91,6 +102,7 @@ function atualizar_tela() {
             document.getElementById("escolha_nome_Jogador2").classList.remove("invisivel")
             break
         case 3:
+            document.getElementById("fim_de_jogo").classList.add("invisivel")
             document.getElementById("escolha_num_secreto_Jogador1").classList.remove("invisivel")
             document.getElementById("h3_Nome_Jogador1").textContent = nome_Jogador1
             break
@@ -122,6 +134,38 @@ function atualizar_tela() {
             break
         case 9:
             document.getElementById("fim_de_jogo").classList.remove("invisivel")
+            document.getElementById("msg_jogador_venceu").style.textTransform = "uppercase"
+            document.getElementById("placar_nome_Jogador1").textContent = nome_Jogador1
+            document.getElementById("placar_num_tent_Jogador1").textContent = num_tent_Jgd1
+            document.getElementById("placar_num_tent_Jogador2").textContent = num_tent_Jgd2
+            document.getElementById("placar_nome_Jogador2").textContent = nome_Jogador2
+            if (num_tent_Jgd1 < num_tent_Jgd2) {
+                document.getElementById("msg_jogador_venceu").textContent = nome_Jogador1 + " VENCEU!"
+                document.getElementById("botao_desempate").classList.add("invisivel")
+                document.getElementById("link_voltar_ao_menu").classList.remove("invisivel")
+            }
+            else if (num_tent_Jgd1 > num_tent_Jgd2) {
+                document.getElementById("msg_jogador_venceu").textContent = nome_Jogador2 + " VENCEU!"
+                document.getElementById("botao_desempate").classList.add("invisivel")
+                document.getElementById("link_voltar_ao_menu").classList.remove("invisivel")
+            }
+            else {
+                const empate = num_tent_Jgd1 == num_tent_Jgd2
+                if (empate) {
+                    fase = 3
+                    num_tent_Jgd1 = 0
+                    num_tent_Jgd2 = 0
+                    document.getElementById("msg_jogador_venceu").textContent = "EMPATOU!"
+                }
+                else if (num_tent_Jgd1 < num_tent_Jgd2) {
+                    document.getElementById("msg_jogador_venceu").textContent = nome_Jogador1 + " VENCEU!"
+                }
+                else {
+                    document.getElementById("msg_jogador_venceu").textContent = nome_Jogador2 + " VENCEU!"
+                }
+                document.getElementById("botao_desempate").classList.toggle("invisivel", !empate)
+                document.getElementById("link_voltar_ao_menu").classList.toggle("invisivel", empate)
+            }
             break
         default:
             break
