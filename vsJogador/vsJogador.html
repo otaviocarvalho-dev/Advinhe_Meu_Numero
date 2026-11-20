@@ -22,7 +22,7 @@
         </div>
 
         <div id="interface">
-            <section id="escolha_nome_Jogador1" class="invisivel container_interface">
+            <section id="escolha_nome_Jogador1" class="invisivel">
                 <h3 class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Digite seu nome:</p>
                 <input placeholder="Digite seu nome aqui" maxlength="35" type="text" name="" id="input_nome_Jogador1" class="input_nome_jogador">
@@ -50,7 +50,7 @@
                 <button onclick="tentativa_Jogador2()" id="confirmar_tent_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
-            <section id="msg_Jgd2_advinhou" class="invisivel mensagem_jogador_advinhou">
+            <section id="msg_Jgd2_advinhou" class="invisivel">
                 <h3 id="h3_Parabens_Jogador2" class="h3_Parabens">PARABÉNS, Jogador 2!</h3>
                 <p class="mensagem_principal">Você advinhou o número secreto!</p>
                 <div class="container_num_secreto">
@@ -74,7 +74,7 @@
                 <button onclick="tentativa_Jogador1()" id="confirmar_tent_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
-            <section id="msg_Jgd1_advinhou" class="invisivel mensagem_jogador_advinhou">
+            <section id="msg_Jgd1_advinhou" class="invisivel">
                 <h3 id="h3_Parabens_Jogador1" class="h3_Parabens">PARABÉNS, Jogador 1!</h3>
                 <p class="mensagem_principal">Você advinhou o número secreto!</p>
                 <div class="container_num_secreto">
@@ -85,16 +85,21 @@
             </section>
 
             <section id="fim_de_jogo" class="invisivel">
+                <h3 id="msg_jogador_venceu" class="h3_Parabens">Jogador VENCEU!</h3>
+                <p class="mensagem_principal">Placar de tentativas:</p>
                 <div class="container_placar">
-                    <h3 id="placar_nome_Jogador1">Jogador 1</h3>
-                    <p id="placar_num_tent_Jogador1">0</p>
-                    <p id="placar_x">X</p>
-                    <p id="placar_num_tent_Jogador2">0</p>
-                    <h3 id="placar_nome_Jogador2">Jogador 2</h3>
-                    <a href="/menuprincipal/menuprincipal.html">
-                        <button>Voltar ao menu principal</button>
-                    </a>
+                    <div id="placar_nome_Jogador1" class="placar_nome_jogador">Jogador 1</div>
+                    <div id="placar">
+                        <div id="placar_num_tent_Jogador1" class="placar_num_tent">0</div>
+                        <div id="placar_x">X</div>
+                        <div id="placar_num_tent_Jogador2" class="placar_num_tent">0</div>
+                    </div>
+                    <div id="placar_nome_Jogador2" class="placar_nome_jogador">Jogador 2</div>
                 </div>
+                <button onclick="Partida_Desempate()" id="botao_desempate" class="invisivel botao_confirmar">Desempate!</button>
+                <a href="/menuprincipal/menuprincipal.html" id="link_voltar_ao_menu" class="invisivel">
+                    <button id="botao_voltar_ao_menu" class="botao_confirmar">Menu principal</button>
+                </a>
             </section>
         </div>
 
