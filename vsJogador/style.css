@@ -111,12 +111,11 @@ h1, h2, h3, h4, p {
 }
 
 .h3_Nome_Jogador {
-    justify-self: center;
-
     margin-bottom: 64px;
 
     font-size: 4rem;
     font-weight: 700;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 
@@ -241,12 +240,15 @@ h1, h2, h3, h4, p {
     color: #82c5ff;
 }
 
-.h3_Parabens {
-    justify-self: center;
+.botao_confirmar.invisivel {
+    display: none;
+}
 
+.h3_Parabens {
     margin-bottom: 20px;
 
     font-size: 4rem;
+    text-align: center;
     letter-spacing: 1px;
 
     color: #82c5ff;
@@ -306,27 +308,100 @@ h1, h2, h3, h4, p {
 
 .container_placar {
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 80px 0px 80px 0px;
+
+    font-family: "Basic", sans-serif;
+    line-height: 100%;
+    letter-spacing: 1px;
 }
 
-#placar_nome_Jogador1,
-#placar_nome_Jogador2 {
+.placar_nome_jogador {
+    display: flex;
+    flex-wrap: wrap;
 
+    height: 130px;
+    width: 195px;
+
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: #202020
 }
 
-#placar_nome_Jogador1,
-#placar_nome_Jogador2 {
+#placar_nome_Jogador1 {
+    display: flex;
+    justify-content: right;
+    align-items: center;
 
+    padding-right: 12px;
+}
+
+#placar_nome_Jogador2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    padding-left: 12px;
+}
+
+.placar_num_tent {
+    font-size: 4rem;
+}
+
+#placar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 130px;
+    width: 130px;
+
+    font-weight: 700;
+
+    color: #74beff;
+    background-color: #0046c9;
+}
+
+#placar_num_tent_Jogador1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 40%;
 }
 
 #placar_x {
-    font-family: "Erica One", serif;
-    line-height: 100%;
-    letter-spacing: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    color: #74beff;
-    -webkit-text-stroke: 5px #0046c9;
+    height: 100%;
+    width: 20%;
+
+    font-size: 2.6rem;
+
+    position: relative;
+    top: 1px;
 }
 
-.container_placar a button {
-    display: block;
+#placar_num_tent_Jogador2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 40%;
+}
+
+#link_voltar_ao_menu {
+    text-decoration: none;
+}
+
+#botao_voltar_ao_menu {
+    width: 220px;
 }
