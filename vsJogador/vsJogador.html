@@ -39,7 +39,7 @@
             <section id="escolha_num_secreto_Jogador1" class="invisivel">
                 <h3 id="h3_Nome_Jogador1" class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Escolha seu número secreto:</p>
-                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" max="500" name="" id="input_num_Jogador1" class="input_num_secreto">
+                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g,'')" max="500" name="" id="input_num_Jogador1" class="input_num_secreto">
                 <p id="erro_num_max1" class="invisivel msg_erro_input">ERRO! Apenas números de 1 a 500!</p>
                 <button onclick="escolha_num_Jogador1()" id="confirmar_num_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
