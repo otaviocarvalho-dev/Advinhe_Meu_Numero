@@ -86,27 +86,33 @@ function Proximo_Jogador() {
 
 function escolha_num_Jogador2() {
     document.getElementById("erro_num_max2").classList.add("invisivel")
-    if (document.getElementById("input_num_Jogador2").value < 501) {
-        num_Jogador2 = document.getElementById("input_num_Jogador2").value
+    if (document.getElementById("input_num_Jogador2").value.trim() < 501 && document.getElementById("input_num_Jogador2").value.trim() !== "") {
+        num_Jogador2 = document.getElementById("input_num_Jogador2").value.trim()
         document.getElementById("escolha_num_secreto_Jogador2").classList.add("invisivel")
         document.getElementById("input_num_Jogador2").value = ""
         fase ++
         atualizar_tela()
     }
-    else {
-        const erro_num_max2 = document.getElementById("input_num_Jogador2").value > 500
+    else if (document.getElementById("input_num_Jogador2").value.trim() > 500) {
+        const erro_num_max2 = document.getElementById("input_num_Jogador2").value.trim() > 500
         document.getElementById("input_num_Jogador2").value = ""
         document.getElementById("input_num_Jogador2").style.borderColor = "red"
-        document.getElementById("erro_num_max1").classList.toggle("invisivel", !erro_num_max2)
+        document.getElementById("erro_num_max2").classList.toggle("invisivel", !erro_num_max2)
+    }
+    else {
+        const erro_num_max2 = document.getElementById("input_num_Jogador2").value.trim() === ""
+        document.getElementById("input_num_Jogador2").value = ""
+        document.getElementById("input_num_Jogador2").style.borderColor = "red"
+        document.getElementById("erro_num_max2").classList.toggle("invisivel", !erro_num_max2)
     }
 }
 
 function tentativa_Jogador1() {
-    if (document.getElementById("input_tentativa_Jogador1").value < 501) {
+    if (document.getElementById("input_tentativa_Jogador1").value.trim() < 501 && document.getElementById("input_tentativa_Jogador1").value.trim() !== "") {
         tent_Jgd1 = Number(
-            document.getElementById("input_tentativa_Jogador1").value
+            document.getElementById("input_tentativa_Jogador1").value.trim()
         )
-        if (tent_Jgd1 === Number(num_Jogador2)) {
+        if (tent_Jgd1 === Number(num_Jogador1)) {
             document.getElementById("advinhacao_Jogador1").classList.add("invisivel")
             document.getElementById("msg_Jgd1_advinhou").classList.remove("invisivel")
             document.getElementById("input_tentativa_Jogador1").value = ""
@@ -119,11 +125,17 @@ function tentativa_Jogador1() {
             document.getElementById("input_tentativa_Jogador1").value = ""
         }
     }
+    else if (document.getElementById("input_tentativa_Jogador1").value.trim() > 500) {
+        const erro_tent_num_max1 = document.getElementById("input_num_Jogador1").value.trim() > 500
+        document.getElementById("input_tentativa_Jogador1").value = ""
+        document.getElementById("input_tentativa_Jogador1").style.borderColor = "red"
+        document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
+    }
     else {
-        const erro_tent_num_max1 = document.getElementById("input_num_Jogador1").value > 500
-        document.getElementById("input_num_Jogador1").value = ""
-        document.getElementById("input_num_Jogador1").style.borderColor = "red"
-        document.getElementById("erro_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
+        const erro_tent_num_max1 = document.getElementById("input_tentativa_Jogador1").value.trim() === ""
+        document.getElementById("input_tentativa_Jogador1").value = ""
+        document.getElementById("input_tentativa_Jogador1").style.borderColor = "red"
+        document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
     }
 }
 
