@@ -92,20 +92,20 @@ function tentativa_Jogador2() {
             atualizar_tela()
         }
         else {
-            if (maior_numero2 === null || tent_Jgd2 < Number(num_Jogador1)) {
-                if (tent_Jgd2 > maior_numero2) {
-                    maior_numero2 = tent_Jgd2
-                }
+            if (maior_numero2 === null && menor_numero2 === null) {
+                maior_numero2 = 500
+                menor_numero2 = 1
             }
-            else {
-                if (menor_numero2 === null || tent_Jgd2 < menor_numero2) {
-                    menor_numero2 = tent_Jgd2
-                }
+            if (tent_Jgd2 > num_Jogador1) {
+                maior_numero2 = Math.min(maior_numero2, tent_Jgd2)
             }
-            let maior_exibido = maior_numero2 ?? 1
-            let menor_exibido = menor_numero2 ?? 500
-            document.getElementById("maior_que2").textContent = "Maior que: " + maior_exibido
-            document.getElementById("menor_que2").textContent = "Menor que: " + menor_exibido
+            else if (tent_Jgd2 < num_Jogador1) {
+                menor_numero2 = Math.max(menor_numero2, tent_Jgd2)
+            }
+            let maior_exibido2 = maior_numero2 ?? 500
+            let menor_exibido2 = menor_numero2 ?? 1
+            document.getElementById("maior_que2").textContent = "Maior que: " + menor_exibido2
+            document.getElementById("menor_que2").textContent = "Menor que: " + maior_exibido2
             document.getElementById("msg_maior_e_menor2").classList.remove("invisivel")
 
             document.getElementById("msg_num_tent2").classList.remove("invisivel")
@@ -187,21 +187,20 @@ function tentativa_Jogador1() {
             atualizar_tela()
         }
         else {
-            if (maior_numero1 === null || tent_Jgd1 < Number(num_Jogador2)) {
-                if (tent_Jgd1 > maior_numero1) {
-                    maior_numero1 = tent_Jgd1
-                }
+            if (maior_numero1 === null && menor_numero1 === null) {
+                maior_numero1 = 500
+                menor_numero1 = 1
             }
-            else {
-                if (menor_numero1 === null || tent_Jgd1 < menor_numero1) {
-                    menor_numero1 = tent_Jgd1
-                }
+            if (tent_Jgd1 > num_Jogador2) {
+                maior_numero1 = Math.min(maior_numero1, tent_Jgd1)
             }
-            document.getElementById("msg_maior_e_menor1").classList.remove("invisivel")
-            let maior_exibido = maior_numero1 ?? 1
-            let menor_exibido = menor_numero1 ?? 500
-            document.getElementById("maior_que1").textContent = "Maior que: " + maior_exibido
-            document.getElementById("menor_que1").textContent = "Menor que: " + menor_exibido
+            else if (tent_Jgd1 < num_Jogador2) {
+                menor_numero1 = Math.max(menor_numero1, tent_Jgd1)
+            }
+            let maior_exibido1 = maior_numero1 ?? 500
+            let menor_exibido1 = menor_numero1 ?? 1
+            document.getElementById("maior_que1").textContent = "Maior que: " + menor_exibido1
+            document.getElementById("menor_que1").textContent = "Menor que: " + maior_exibido1
             document.getElementById("msg_maior_e_menor1").classList.remove("invisivel")
 
             document.getElementById("msg_num_tent1").classList.remove("invisivel")
