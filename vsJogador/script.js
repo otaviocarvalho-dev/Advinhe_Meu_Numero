@@ -3,11 +3,23 @@ let nome_Jogador2 = ""
 let num_Jogador1 = 0
 let num_Jogador2 = 0
 let tent_Jgd1 = 0
+let maior_numero1 = null
+let menor_numero1 = null
 let tent_Jgd2 = 0
+let maior_numero2 = null
+let menor_numero2 = null
 let num_tent_Jgd1 = 0
 let num_tent_Jgd2 = 0
 let num_partidas = 0
 let fase = 1
+
+document.getElementById("input_nome_Jogador1").addEventListener("input", function () {
+    this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, "")
+})
+
+document.getElementById("input_nome_Jogador2").addEventListener("input", function () {
+    this.value = this.value.replace(/[^\p{L}\s]/gu, "")
+})
 
 function salvar_nome_Jogador1() {
     nome_Jogador1 = document.getElementById("input_nome_Jogador1").value.trim()
@@ -25,29 +37,37 @@ function salvar_nome_Jogador2() {
 
 function escolha_num_Jogador1() {
     document.getElementById("erro_num_max1").classList.add("invisivel")
-    if (document.getElementById("input_num_Jogador1").value.trim() < 501 && document.getElementById("input_num_Jogador1").value.trim() !== "") {
+    if (document.getElementById("input_num_Jogador1").value.trim() > 0 && document.getElementById("input_num_Jogador1").value.trim() < 501 && document.getElementById("input_num_Jogador1").value.trim() !== "") {
         num_Jogador1 = document.getElementById("input_num_Jogador1").value.trim()
         document.getElementById("escolha_num_secreto_Jogador1").classList.add("invisivel")
         document.getElementById("input_num_Jogador1").value = ""
         fase ++
         atualizar_tela()
     }
-    else if (document.getElementById("input_num_Jogador1").value.trim() > 500) {
-        const erro_num_max1 = document.getElementById("input_num_Jogador1").value.trim() > 500
+    else if (document.getElementById("input_num_Jogador1").value.trim() > 500 || document.getElementById("input_num_Jogador1").value.trim() < 1) {
+        const erro_num_max1 = document.getElementById("input_num_Jogador1").value.trim() > 500 || document.getElementById("input_num_Jogador1").value.trim() < 1
         document.getElementById("input_num_Jogador1").value = ""
-        document.getElementById("input_num_Jogador1").style.borderColor = "red"
+        document.getElementById("input_num_Jogador1").style.borderColor = "#c30000"
+        document.getElementById("erro_num_max1").classList.toggle("invisivel", !erro_num_max1)
+    }
+    else if (document.getElementById("input_num_Jogador1").value.trim() == 0) {
+        const erro_num_max1 = document.getElementById("input_num_Jogador1").value.trim() == 0
+        document.getElementById("input_num_Jogador1").value = ""
+        document.getElementById("input_num_Jogador1").style.borderColor = "#c30000"
         document.getElementById("erro_num_max1").classList.toggle("invisivel", !erro_num_max1)
     }
     else {
         const erro_num_max1 = document.getElementById("input_num_Jogador1").value.trim() === ""
         document.getElementById("input_num_Jogador1").value = ""
-        document.getElementById("input_num_Jogador1").style.borderColor = "red"
+        document.getElementById("input_num_Jogador1").style.borderColor = "#c30000"
         document.getElementById("erro_num_max1").classList.toggle("invisivel", !erro_num_max1)
     }
 }
 
 function tentativa_Jogador2() {
-    if (document.getElementById("input_tentativa_Jogador2").value.trim() < 501 && document.getElementById("input_tentativa_Jogador2").value.trim() !== "") {
+    if (document.getElementById("input_tentativa_Jogador2").value.trim() > 0 && document.getElementById("input_tentativa_Jogador2").value.trim() < 501 && document.getElementById("input_tentativa_Jogador2").value.trim() !== "") {
+        document.getElementById("erro_tent_num_max2").classList.add("invisivel")
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = ""
         tent_Jgd2 = Number(
             document.getElementById("input_tentativa_Jogador2").value.trim()
         )
@@ -60,20 +80,44 @@ function tentativa_Jogador2() {
             atualizar_tela()
         }
         else {
+            if (maior_numero2 === null || tent_Jgd2 < Number(num_Jogador1)) {
+                if (tent_Jgd2 > maior_numero2) {
+                    maior_numero2 = tent_Jgd2
+                }
+            }
+            else {
+                if (menor_numero2 === null || tent_Jgd2 < menor_numero2) {
+                    menor_numero2 = tent_Jgd2
+                }
+            }
+            document.getElementById("msg_maior_e_menor2").classList.remove("invisivel")
+            let maior_exibido = maior_numero2 ?? 1
+            let menor_exibido = menor_numero2 ?? 500
+            document.getElementById("maior_que2").textContent = "Maior que: " + maior_exibido
+            document.getElementById("menor_que2").textContent = "Menor que: " + menor_exibido
+
+            document.getElementById("msg_num_tent2").classList.remove("invisivel")
             num_tent_Jgd2 ++
+            document.getElementById("msg_num_tent2").textContent = "Número de tentativas: " + num_tent_Jgd2
             document.getElementById("input_tentativa_Jogador2").value = ""
         }
     }
-    else if (document.getElementById("input_tentativa_Jogador2").value.trim() > 500) {
-        const erro_tent_num_max2 = document.getElementById("input_num_Jogador2").value.trim() > 500
+    else if (document.getElementById("input_tentativa_Jogador2").value.trim() > 500 || document.getElementById("input_tentativa_Jogador2").value.trim() < 1) {
+        const erro_tent_num_max2 = document.getElementById("input_num_Jogador2").value.trim() > 500 || document.getElementById("input_num_Jogador2").value.trim() < 1
         document.getElementById("input_tentativa_Jogador2").value = ""
-        document.getElementById("input_tentativa_Jogador2").style.borderColor = "red"
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
+        document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
+    }
+    else if (document.getElementById("input_tentativa_Jogador2").value.trim() == 0) {
+        const erro_tent_num_max2 = document.getElementById("input_tentativa_Jogador2").value.trim() == 0
+        document.getElementById("input_tentativa_Jogador2").value = ""
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
     }
     else {
         const erro_tent_num_max2 = document.getElementById("input_tentativa_Jogador2").value.trim() === ""
         document.getElementById("input_tentativa_Jogador2").value = ""
-        document.getElementById("input_tentativa_Jogador2").style.borderColor = "red"
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
     }
 }
@@ -86,33 +130,41 @@ function Proximo_Jogador() {
 
 function escolha_num_Jogador2() {
     document.getElementById("erro_num_max2").classList.add("invisivel")
-    if (document.getElementById("input_num_Jogador2").value.trim() < 501 && document.getElementById("input_num_Jogador2").value.trim() !== "") {
+    if (document.getElementById("input_num_Jogador2").value.trim() > 0 && document.getElementById("input_num_Jogador2").value.trim() < 501 && document.getElementById("input_num_Jogador2").value.trim() !== "") {
         num_Jogador2 = document.getElementById("input_num_Jogador2").value.trim()
         document.getElementById("escolha_num_secreto_Jogador2").classList.add("invisivel")
         document.getElementById("input_num_Jogador2").value = ""
         fase ++
         atualizar_tela()
     }
-    else if (document.getElementById("input_num_Jogador2").value.trim() > 500) {
-        const erro_num_max2 = document.getElementById("input_num_Jogador2").value.trim() > 500
+    else if (document.getElementById("input_num_Jogador2").value.trim() > 500 || document.getElementById("input_num_Jogador2").value.trim() < 1) {
+        const erro_num_max2 = document.getElementById("input_num_Jogador2").value.trim() > 500 || document.getElementById("input_num_Jogador2").value.trim() < 1
         document.getElementById("input_num_Jogador2").value = ""
-        document.getElementById("input_num_Jogador2").style.borderColor = "red"
+        document.getElementById("input_num_Jogador2").style.borderColor = "#c30000"
+        document.getElementById("erro_num_max2").classList.toggle("invisivel", !erro_num_max2)
+    }
+    else if (document.getElementById("input_num_Jogador2").value.trim() == 0) {
+        const erro_num_max2 = document.getElementById("input_num_Jogador2").value.trim() == 0
+        document.getElementById("input_num_Jogador2").value = ""
+        document.getElementById("input_num_Jogador2").style.borderColor = "#c30000"
         document.getElementById("erro_num_max2").classList.toggle("invisivel", !erro_num_max2)
     }
     else {
         const erro_num_max2 = document.getElementById("input_num_Jogador2").value.trim() === ""
         document.getElementById("input_num_Jogador2").value = ""
-        document.getElementById("input_num_Jogador2").style.borderColor = "red"
+        document.getElementById("input_num_Jogador2").style.borderColor = "#c30000"
         document.getElementById("erro_num_max2").classList.toggle("invisivel", !erro_num_max2)
     }
 }
 
 function tentativa_Jogador1() {
-    if (document.getElementById("input_tentativa_Jogador1").value.trim() < 501 && document.getElementById("input_tentativa_Jogador1").value.trim() !== "") {
+    if (document.getElementById("input_tentativa_Jogador1").value.trim() > 0 && document.getElementById("input_tentativa_Jogador1").value.trim() < 501 && document.getElementById("input_tentativa_Jogador1").value.trim() !== "") {
+        document.getElementById("erro_tent_num_max1").classList.add("invisivel")
+        document.getElementById("input_tentativa_Jogador1").style.borderColor = ""
         tent_Jgd1 = Number(
             document.getElementById("input_tentativa_Jogador1").value.trim()
         )
-        if (tent_Jgd1 === Number(num_Jogador1)) {
+        if (tent_Jgd1 === Number(num_Jogador2)) {
             document.getElementById("advinhacao_Jogador1").classList.add("invisivel")
             document.getElementById("msg_Jgd1_advinhou").classList.remove("invisivel")
             document.getElementById("input_tentativa_Jogador1").value = ""
@@ -121,20 +173,44 @@ function tentativa_Jogador1() {
             atualizar_tela()
         }
         else {
+            if (maior_numero1 === null || tent_Jgd1 < Number(num_Jogador2)) {
+                if (tent_Jgd1 > maior_numero2) {
+                    maior_numero1 = tent_Jgd1
+                }
+            }
+            else {
+                if (menor_numero1 === null || tent_Jgd1 < menor_numero1) {
+                    menor_numero1 = tent_Jgd1
+                }
+            }
+            document.getElementById("msg_maior_e_menor1").classList.remove("invisivel")
+            let maior_exibido = maior_numero1 ?? 1
+            let menor_exibido = menor_numero1 ?? 500
+            document.getElementById("maior_que1").textContent = "Maior que: " + maior_exibido
+            document.getElementById("menor_que1").textContent = "Menor que: " + menor_exibido
+
+            document.getElementById("msg_num_tent1").classList.remove("invisivel")
             num_tent_Jgd1 ++
+            document.getElementById("msg_num_tent1").textContent = "Número de tentativas: " + num_tent_Jgd1
             document.getElementById("input_tentativa_Jogador1").value = ""
         }
     }
-    else if (document.getElementById("input_tentativa_Jogador1").value.trim() > 500) {
-        const erro_tent_num_max1 = document.getElementById("input_num_Jogador1").value.trim() > 500
+    else if (document.getElementById("input_tentativa_Jogador1").value.trim() > 500 || document.getElementById("input_tentativa_Jogador1").value.trim() < 1) {
+        const erro_tent_num_max1 = document.getElementById("input_num_Jogador1").value.trim() > 500 || document.getElementById("input_num_Jogador1").value.trim() < 1
         document.getElementById("input_tentativa_Jogador1").value = ""
-        document.getElementById("input_tentativa_Jogador1").style.borderColor = "red"
+        document.getElementById("input_tentativa_Jogador1").style.borderColor = "#c30000"
+        document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
+    }
+    else if (document.getElementById("input_tentativa_Jogador1").value.trim() == 0) {
+        const erro_tent_num_max1 = document.getElementById("input_num_Jogador1").value.trim() == 0
+        document.getElementById("input_tentativa_Jogador1").value = ""
+        document.getElementById("input_tentativa_Jogador1").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
     }
     else {
         const erro_tent_num_max1 = document.getElementById("input_tentativa_Jogador1").value.trim() === ""
         document.getElementById("input_tentativa_Jogador1").value = ""
-        document.getElementById("input_tentativa_Jogador1").style.borderColor = "red"
+        document.getElementById("input_tentativa_Jogador1").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
     }
 }
