@@ -22,17 +22,27 @@ document.getElementById("input_nome_Jogador2").addEventListener("input", functio
 })
 
 function salvar_nome_Jogador1() {
-    nome_Jogador1 = document.getElementById("input_nome_Jogador1").value.trim()
-    document.getElementById("escolha_nome_Jogador1").classList.add("invisivel")
-    fase ++
-    atualizar_tela()
+    if (document.getElementById("input_nome_Jogador1").value.trim() !== "") {
+        document.getElementById("escolha_nome_Jogador1").classList.add("invisivel")
+        nome_Jogador1 = document.getElementById("input_nome_Jogador1").value.trim()
+        fase ++
+        atualizar_tela()
+    }
+    else {
+        document.getElementById("input_nome_Jogador1").value = ""
+    }
 }
 
 function salvar_nome_Jogador2() {
-    nome_Jogador2 = document.getElementById("input_nome_Jogador2").value.trim()
-    document.getElementById("escolha_nome_Jogador2").classList.add("invisivel")
-    fase ++
-    atualizar_tela()
+    if (document.getElementById("input_nome_Jogador2").value.trim() !== "") {
+        document.getElementById("escolha_nome_Jogador2").classList.add("invisivel")
+        nome_Jogador2 = document.getElementById("input_nome_Jogador2").value.trim()
+        fase ++
+        atualizar_tela()
+    }
+    else {
+        document.getElementById("input_nome_Jogador2").value = ""
+    }
 }
 
 function escolha_num_Jogador1() {
@@ -66,6 +76,8 @@ function escolha_num_Jogador1() {
 
 function tentativa_Jogador2() {
     if (document.getElementById("input_tentativa_Jogador2").value.trim() > 0 && document.getElementById("input_tentativa_Jogador2").value.trim() < 501 && document.getElementById("input_tentativa_Jogador2").value.trim() !== "") {
+        document.getElementById("msg_maior_e_menor2").classList.add("invisivel")
+        document.getElementById("msg_num_tent2").classList.add("invisivel")
         document.getElementById("erro_tent_num_max2").classList.add("invisivel")
         document.getElementById("input_tentativa_Jogador2").style.borderColor = ""
         tent_Jgd2 = Number(
@@ -90,11 +102,11 @@ function tentativa_Jogador2() {
                     menor_numero2 = tent_Jgd2
                 }
             }
-            document.getElementById("msg_maior_e_menor2").classList.remove("invisivel")
             let maior_exibido = maior_numero2 ?? 1
             let menor_exibido = menor_numero2 ?? 500
             document.getElementById("maior_que2").textContent = "Maior que: " + maior_exibido
             document.getElementById("menor_que2").textContent = "Menor que: " + menor_exibido
+            document.getElementById("msg_maior_e_menor2").classList.remove("invisivel")
 
             document.getElementById("msg_num_tent2").classList.remove("invisivel")
             num_tent_Jgd2 ++
@@ -159,6 +171,8 @@ function escolha_num_Jogador2() {
 
 function tentativa_Jogador1() {
     if (document.getElementById("input_tentativa_Jogador1").value.trim() > 0 && document.getElementById("input_tentativa_Jogador1").value.trim() < 501 && document.getElementById("input_tentativa_Jogador1").value.trim() !== "") {
+        document.getElementById("msg_maior_e_menor1").classList.add("invisivel")
+        document.getElementById("msg_num_tent1").classList.add("invisivel")
         document.getElementById("erro_tent_num_max1").classList.add("invisivel")
         document.getElementById("input_tentativa_Jogador1").style.borderColor = ""
         tent_Jgd1 = Number(
@@ -174,7 +188,7 @@ function tentativa_Jogador1() {
         }
         else {
             if (maior_numero1 === null || tent_Jgd1 < Number(num_Jogador2)) {
-                if (tent_Jgd1 > maior_numero2) {
+                if (tent_Jgd1 > maior_numero1) {
                     maior_numero1 = tent_Jgd1
                 }
             }
@@ -188,6 +202,7 @@ function tentativa_Jogador1() {
             let menor_exibido = menor_numero1 ?? 500
             document.getElementById("maior_que1").textContent = "Maior que: " + maior_exibido
             document.getElementById("menor_que1").textContent = "Menor que: " + menor_exibido
+            document.getElementById("msg_maior_e_menor1").classList.remove("invisivel")
 
             document.getElementById("msg_num_tent1").classList.remove("invisivel")
             num_tent_Jgd1 ++
@@ -223,6 +238,10 @@ function Mostrar_Placar() {
 }
 
 function Partida_Desempate() {
+    maior_numero1 = null
+    menor_numero1 = null
+    maior_numero2 = null
+    menor_numero2 = null
     fase = 3
     atualizar_tela()
 }
