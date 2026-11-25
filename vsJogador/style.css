@@ -210,12 +210,22 @@ h1, h2, h3, h4, p {
     color: #0088ff;
 }
 
+.msg_erro_input {
+    justify-self: center;
+
+    margin-bottom: 32px;
+
+    color: #c30000;
+}
+
 .botao_confirmar {
     display: block;
     justify-self: center;
 
     height: 44px;
     width: 132px;
+
+    margin-bottom: 32px;
 
     outline: none;
     border: none;
@@ -242,6 +252,33 @@ h1, h2, h3, h4, p {
 
 .botao_confirmar.invisivel {
     display: none;
+}
+
+.msg_maior_e_menor:not(.invisivel) {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.msg_maior_e_menor2 {
+    border: solid 3px #82c5ff;
+    border-radius: 20px;
+}
+
+.msg_maior_que,
+.msg_menor_que {
+    margin-bottom: 8px;
+
+    font-size: 2rem;
+
+    color: #0046c9;
+}
+
+#maior_que1 span,
+#menor_que1 span,
+#maior_que2 span,
+#menor_que2 span {
+    font-weight: 700;
 }
 
 .h3_Parabens {
