@@ -40,15 +40,15 @@
                 <h3 id="h3_Nome_Jogador1" class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Escolha seu número secreto:</p>
                 <input placeholder="000" maxlength="3" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g,'')" max="500" name="" id="input_num_Jogador1" class="input_num_secreto">
-                <p id="erro_num_max1" class="invisivel msg_erro_input">ERRO! Apenas números de 1 a 500 são válidos.</p>
+                <p id="erro_num_max1" class="invisivel msg_erro_input">Apenas números de 1 a 500 são válidos!</p>
                 <button onclick="escolha_num_Jogador1()" id="confirmar_num_Jogador1" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="advinhacao_Jogador2" class="invisivel">
                 <h3 id="h3_Nome_Jogador2" class="h3_Nome_Jogador">Jogador 2</h3>
                 <p class="mensagem_principal">Tente advinhar o número secreto:</p>
-                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" max="500" name="" id="input_tentativa_Jogador2" class="input_tentativa_Jogador">
-                <p id="erro_tent_num_max2" class="invisivel msg_erro_input">ERRO! Apenas números de 1 a 500 são válidos.</p>
+                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g,'')" max="500" name="" id="input_tentativa_Jogador2" class="input_tentativa_Jogador">
+                <p id="erro_tent_num_max2" class="invisivel msg_erro_input">Apenas números de 1 a 500 são válidos!</p>
                 <button onclick="tentativa_Jogador2()" id="confirmar_tent_Jogador2" class="botao_confirmar">Confirmar</button>
                 <div id="msg_maior_e_menor2" class="invisivel msg_maior_e_menor">
                     <p id="maior_que2" class="msg_maior_que">Maior que: <span>000</span></p>
@@ -70,16 +70,16 @@
             <section id="escolha_num_secreto_Jogador2" class="invisivel">
                 <h3 id="h3_Nome_Jgd2" class="h3_Nome_Jogador">Jogador 2</h3>
                 <p class="mensagem_principal">Escolha seu número secreto:</p>
-                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" max="500" id="input_num_Jogador2" class="input_num_secreto">
-                <p id="erro_num_max2" class="invisivel msg_erro_input">ERRO! Apenas números de 1 a 500 são válidos.</p>
+                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g,'')" max="500" id="input_num_Jogador2" class="input_num_secreto">
+                <p id="erro_num_max2" class="invisivel msg_erro_input">Apenas números de 1 a 500 são válidos!</p>
                 <button onclick="escolha_num_Jogador2()" id="confirmar_num_Jogador2" class="botao_confirmar">Confirmar</button>
             </section>
 
             <section id="advinhacao_Jogador1" class="invisivel">
                 <h3 id="h3_Nome_Jgd1" class="h3_Nome_Jogador">Jogador 1</h3>
                 <p class="mensagem_principal">Tente advinhar o número secreto:</p>
-                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" max="500" name="" id="input_tentativa_Jogador1" class="input_tentativa_Jogador">
-                <p id="erro_tent_num_max1" class="invisivel msg_erro_input">ERRO! Apenas números de 1 a 500 são válidos.</p>
+                <input placeholder="000" maxlength="3" type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g,'')" max="500" name="" id="input_tentativa_Jogador1" class="input_tentativa_Jogador">
+                <p id="erro_tent_num_max1" class="invisivel msg_erro_input">Apenas números de 1 a 500 são válidos!</p>
                 <button onclick="tentativa_Jogador1()" id="confirmar_tent_Jogador1" class="botao_confirmar">Confirmar</button>
                 <div id="msg_maior_e_menor1" class="invisivel msg_maior_e_menor">
                     <p id="maior_que1" class="msg_maior_que">Maior que: <span>000</span></p>
