@@ -93,8 +93,8 @@ function tentativa_Jogador2() {
         }
         else {
             if (maior_numero2 === null && menor_numero2 === null) {
-                maior_numero2 = 500
-                menor_numero2 = 1
+                maior_numero2 = 501
+                menor_numero2 = 0
             }
             if (tent_Jgd2 > num_Jogador1) {
                 maior_numero2 = Math.min(maior_numero2, tent_Jgd2)
@@ -126,8 +126,13 @@ function tentativa_Jogador2() {
         document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
     }
-    else {
+    else if (document.getElementById("input_tentativa_Jogador2").value.trim() === "") {
         const erro_tent_num_max2 = document.getElementById("input_tentativa_Jogador2").value.trim() === ""
+        document.getElementById("input_tentativa_Jogador2").value = ""
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
+        document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
+    }
+    else {
         document.getElementById("input_tentativa_Jogador2").value = ""
         document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
@@ -188,8 +193,8 @@ function tentativa_Jogador1() {
         }
         else {
             if (maior_numero1 === null && menor_numero1 === null) {
-                maior_numero1 = 500
-                menor_numero1 = 1
+                maior_numero1 = 501
+                menor_numero1 = 0
             }
             if (tent_Jgd1 > num_Jogador2) {
                 maior_numero1 = Math.min(maior_numero1, tent_Jgd1)
@@ -221,11 +226,16 @@ function tentativa_Jogador1() {
         document.getElementById("input_tentativa_Jogador1").style.borderColor = "#c30000"
         document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
     }
+    else if (document.getElementById("input_tentativa_Jogador2").value.trim() === "") {
+        const erro_tent_num_max2 = document.getElementById("input_tentativa_Jogador2").value.trim() === ""
+        document.getElementById("input_tentativa_Jogador2").value = ""
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
+        document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
+    }
     else {
-        const erro_tent_num_max1 = document.getElementById("input_tentativa_Jogador1").value.trim() === ""
-        document.getElementById("input_tentativa_Jogador1").value = ""
-        document.getElementById("input_tentativa_Jogador1").style.borderColor = "#c30000"
-        document.getElementById("erro_tent_num_max1").classList.toggle("invisivel", !erro_tent_num_max1)
+        document.getElementById("input_tentativa_Jogador2").value = ""
+        document.getElementById("input_tentativa_Jogador2").style.borderColor = "#c30000"
+        document.getElementById("erro_tent_num_max2").classList.toggle("invisivel", !erro_tent_num_max2)
     }
 }
 
